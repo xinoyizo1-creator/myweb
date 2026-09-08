@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人品牌與歷程作品集 | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts & Font Awesome 圖示 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- 導覽列 Navigation -->
+  <nav class="navbar">
+    <div class="logo">MyPortfolio.</div>
+    <ul class="nav-links">
+      <li><a href="#about">關於我</a></li>
+      <li><a href="#skills">專業技能</a></li>
+      <li><a href="#portfolio">作品展示</a></li>
+      <li><a href="#contact">聯絡方式</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+  <!-- 主視覺 Header / Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>你好，我是 <span class="highlight">[您的名字]</span></h1>
+      <p>大學四年學習歷程 ｜ 專案成果 ｜ 課程作業紀錄</p>
+      <a href="#portfolio" class="btn">瀏覽作品</a>
+    </div>
+  </header>
+
+  <!-- 關於我 About Me -->
+  <section id="about" class="section">
+    <h2 class="section-title">關於我</h2>
+    <div class="about-container">
+      <div class="about-img">
+        <img src="https://via.placeholder.com/300" alt="個人照">
+      </div>
+      <div class="about-text">
+        <h3>[您的大學名稱] - [您的系所]</h3>
+        <p>在這裡寫下一段簡短的自我介紹。描述你在大學四年間學習的核心能力、熱情所在，以及未來的發展方向。</p>
+        <p>這四年裡，我參與過許多跨領域專案、專題研究與課堂實作，這個網站記錄了我一路走來的成長歷程。</p>
+        <a href="#" class="btn btn-outline" download>下載履歷 (CV)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 專業技能 Skills -->
+  <section id="skills" class="section bg-light">
+    <h2 class="section-title">專業技能與工具</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fa-solid fa-code skill-icon"></i>
+        <h3>前端開發</h3>
+        <p>HTML5, CSS3, JavaScript, Vue / React</p>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-paintbrush skill-icon"></i>
+        <h3>UI/UX 設計</h3>
+        <p>Figma, Adobe XD, Wireframing, Prototyping</p>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-database skill-icon"></i>
+        <h3>資料庫與後端</h3>
+        <p>Node.js, Python, MySQL, Git / GitHub</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品展示 Portfolio -->
+  <section id="portfolio" class="section">
+    <h2 class="section-title">大學歷年作品與作業</h2>
+
+    <!-- 分類篩選按鈕 -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="senior">畢業專題</button>
+      <button class="filter-btn" data-filter="classwork">課堂作業</button>
+      <button class="filter-btn" data-filter="sideproject">個人專案</button>
+    </div>
+
+    <!-- 作品網格 -->
+    <div class="portfolio-grid">
+      
+      <!-- 作品卡片 1 -->
+      <div class="portfolio-item senior">
+        <div class="portfolio-img">
+          <img src="https://via.placeholder.com/400x250" alt="畢業專題">
+        </div>
+        <div class="portfolio-info">
+          <span class="tag">畢業專題</span>
+          <h3>智慧校園導覽系統</h3>
+          <p>結合地圖 API 與前端框架開發的智慧校園地圖應用。</p>
+          <div class="portfolio-links">
+            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 查看展示</a>
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i> 程式碼</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 作品卡片 2 -->
+      <div class="portfolio-item classwork">
+        <div class="portfolio-img">
+          <img src="https://via.placeholder.com/400x250" alt="課堂作業">
+        </div>
+        <div class="portfolio-info">
+          <span class="tag">大三作業</span>
+          <h3>演算法視覺化分析</h3>
+          <p>資料結構與演算法課程專題，將排序演算法動畫化呈現。</p>
+          <div class="portfolio-links">
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i> 程式碼</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 作品卡片 3 -->
+      <div class="portfolio-item sideproject">
+        <div class="portfolio-img">
+          <img src="https://via.placeholder.com/400x250" alt="個人專案">
+        </div>
+        <div class="portfolio-info">
+          <span class="tag">Side Project</span>
+          <h3>個人記帳 Web App</h3>
+          <p>使用 JavaScript 搭配 LocalStorage 打造的輕量記帳工具。</p>
+          <div class="portfolio-links">
+            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> 查看展示</a>
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i> 程式碼</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 聯絡方式 Contact -->
+  <section id="contact" class="section bg-light">
+    <h2 class="section-title">與我聯絡</h2>
+    <div class="contact-container">
+      <p>無論是實習機會、交流討論，都非常歡迎與我聯繫！</p>
+      <div class="contact-links">
+        <a href="mailto:your-email@example.com" class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
+          <span>your-email@example.com</span>
+        </a>
+        <a href="https://github.com" target="_blank" class="contact-card">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub Profile</span>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="contact-card">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 頁尾 Footer -->
+  <footer>
+    <p>&copy; 2026 [您的名字]. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
