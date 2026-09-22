@@ -1,0 +1,97 @@
+/* 全域設定 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    color: #333;
+}
+
+/* 主容器 */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+}
+
+/* 圖片藝廊網格排版 */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 圖片卡片樣式 */
+.image-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    aspect-ratio: 4 / 3;
+    text-decoration: none;
+}
+
+/* 圖片本體與滑鼠移過時的動畫效果 */
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* 覆蓋層（滑鼠移過時浮現文字） */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay span {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+/* --- 需求 4：滑鼠移過時圖片會動 --- */
+.image-card:hover img {
+    transform: scale(1.1); /* 圖片放大 10% */
+    filter: brightness(0.9); /* 稍微降低亮度讓畫面更有質感 */
+}
+
+.image-card:hover .overlay {
+    opacity: 1; /* 顯示半透明遮罩 */
+}
+
+.image-card:hover .overlay span {
+    transform: translateY(0); /* 文字浮現動畫 */
+}
