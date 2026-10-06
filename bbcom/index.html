@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>森林小夥伴の童話王國 - 精選 10 款療癒絨毛娃娃</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Fredoka & Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- External Custom Styles (Requirement mapping) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FFFDF9] text-stone-700 antialiased selection:bg-amber-200 selection:text-amber-900">
+
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md shadow-sm border-b border-orange-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo & Brand -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-orange-400 flex items-center justify-center text-white shadow-md transform group-hover:rotate-12 transition-transform duration-300">
+                    <i class="fa-solid fa-paw text-xl"></i>
+                </div>
+                <div>
+                    <span class="heading-font text-2xl font-bold tracking-wide bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">森林小夥伴</span>
+                    <span class="block text-xs text-stone-400 font-medium">Forest Friends Wonderland</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-stone-600">
+                <a href="#products" class="hover:text-orange-500 transition-colors">全部娃娃</a>
+                <a href="#features" class="hover:text-orange-500 transition-colors">安心品質</a>
+                <a href="#story" class="hover:text-orange-500 transition-colors">童話故事</a>
+            </nav>
+
+            <!-- Actions (Cart Button) -->
+            <div class="flex items-center gap-4">
+                <button id="cart-btn" class="relative bg-orange-50 hover:bg-orange-100 text-orange-600 px-5 py-2.5 rounded-full flex items-center gap-2.5 font-medium transition-all shadow-xs border border-orange-200">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span class="hidden sm:inline">購物車</span>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-rose-500 text-white text-xs w-6 h-6 rounded-full flex items-center justify-center font-bold shadow-md transform scale-0 transition-transform duration-300">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden bg-gradient-to-b from-orange-50 via-amber-50/40 to-[#FFFDF9] py-16 lg:py-24 border-b border-amber-100/60">
+        <div class="absolute -top-10 -left-10 w-48 h-48 bg-yellow-200/50 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute top-20 right-10 w-64 h-64 bg-orange-200/40 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-sm font-semibold shadow-xs">
+                        <i class="fa-solid fa-heart text-rose-500"></i> 給寶貝最安穩的溫柔抱抱
+                    </span>
+                    <h1 class="heading-font text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-stone-800 leading-tight">
+                        把森林的溫暖與童話<br>帶進孩子的夢鄉
+                    </h1>
+                    <p class="text-stone-600 text-lg sm:text-xl font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        精選 10 款精緻手作絨毛森林動物夥伴。採用無毒親膚材質，陪伴寶貝每一次快樂冒險與香甜入眠！
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#products" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-orange-500/25 transform hover:-translate-y-0.5 transition-all flex items-center gap-3">
+                            <i class="fa-solid fa-gift"></i> 探索 10 款可愛娃娃
+                        </a>
+                        <a href="#features" class="bg-white hover:bg-stone-50 text-stone-700 font-semibold px-8 py-4 rounded-full border border-stone-200 shadow-sm transition-all">
+                            了解安全承諾
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-orange-300 to-amber-200 rounded-3xl transform rotate-3 scale-105 opacity-50 blur-sm"></div>
+                        <div class="relative bg-white p-4 rounded-3xl shadow-xl border border-orange-100 animate-float-slow">
+                            <img src="images/01.png" alt="小熊 Barnaby" onerror="this.src='https://placehold.co/500x500/fed7aa/9a3412?text=Barnaby'" class="w-full h-80 object-cover rounded-2xl shadow-inner">
+                            <div class="mt-4 flex items-center justify-between px-2">
+                                <div>
+                                    <h3 class="heading-font font-bold text-lg text-stone-800">溫柔守護者・小熊 Barnaby</h3>
+                                    <p class="text-sm text-stone-500">孩子睡前最安心的抱抱夥伴</p>
+                                </div>
+                                <span class="bg-orange-500 text-white font-bold px-3.5 py-1.5 rounded-full text-sm">NT$ 580</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-16 bg-white border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-orange-500 font-bold uppercase tracking-wider text-sm">Quality Promise</span>
+                <h2 class="heading-font text-3xl font-bold text-stone-800 mt-2">給爸爸媽媽的四大安心保證</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-orange-50/50 p-6 rounded-2xl border border-orange-100 text-center hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-orange-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-md">
+                        <i class="fa-solid fa-feather"></i>
+                    </div>
+                    <h3 class="heading-font font-bold text-lg text-stone-800 mb-2">極致親膚柔軟</h3>
+                    <p class="text-sm text-stone-600">嚴選抗敏短絨毛材質，觸感細緻，溫柔呵護寶寶稚嫩肌膚。</p>
+                </div>
+                
+                <div class="bg-amber-50/50 p-6 rounded-2xl border border-amber-100 text-center hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-amber-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-md">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="heading-font font-bold text-lg text-stone-800 mb-2">安全無毒檢驗</h3>
+                    <p class="text-sm text-stone-600">通過嚴格安全認證，不含螢光劑與有害化學物質，安心陪伴。</p>
+                </div>
+                
+                <div class="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 text-center hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-emerald-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-md">
+                        <i class="fa-solid fa-soap"></i>
+                    </div>
+                    <h3 class="heading-font font-bold text-lg text-stone-800 mb-2">可水洗好清潔</h3>
+                    <p class="text-sm text-stone-600">支援溫和手洗與機洗，常保清潔衛生，細菌不殘留。</p>
+                </div>
+                
+                <div class="bg-rose-50/50 p-6 rounded-2xl border border-rose-100 text-center hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-rose-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-md">
+                        <i class="fa-solid fa-face-smile-beam"></i>
+                    </div>
+                    <h3 class="heading-font font-bold text-lg text-stone-800 mb-2">伴隨成長故事</h3>
+                    <p class="text-sm text-stone-600">每隻動物擁有獨特性格，激發孩子同理心與無限想像力。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-16 lg:py-24 bg-[#FFFDF9]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-block bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm font-semibold mb-3">
+                    <i class="fa-solid fa-star text-amber-500"></i> 森林動物家族
+                </span>
+                <h2 class="heading-font text-3xl sm:text-4xl font-bold text-stone-800">挑選您家寶貝的專屬萌寵</h2>
+                <p class="text-stone-600 mt-3 text-lg">點擊卡片可查看詳細性格故事，或直接將喜歡的娃娃加入購物車！</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div id="filter-container" class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+                <button onclick="filterProducts('all')" data-category="all" class="filter-btn active-filter px-6 py-2.5 rounded-full font-bold text-sm bg-orange-500 text-white shadow-md transition-all">
+                    全部夥伴 (10)
+                </button>
+                <button onclick="filterProducts('安撫睡眠')" data-category="安撫睡眠" class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm bg-white text-stone-600 border border-stone-200 hover:bg-orange-50 transition-all">
+                    安撫睡眠
+                </button>
+                <button onclick="filterProducts('活潑冒險')" data-category="活潑冒險" class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm bg-white text-stone-600 border border-stone-200 hover:bg-orange-50 transition-all">
+                    活力冒險
+                </button>
+                <button onclick="filterProducts('療癒自然')" data-category="療癒自然" class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm bg-white text-stone-600 border border-stone-200 hover:bg-orange-50 transition-all">
+                    療癒自然
+                </button>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative">
+            <button id="close-modal-btn" class="absolute top-4 right-4 z-10 w-10 h-10 bg-stone-100 hover:bg-rose-100 hover:text-rose-600 rounded-full flex items-center justify-center text-stone-500 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="modal-content" class="p-6 sm:p-8">
+                <!-- Dynamic modal content -->
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none">
+        <div id="cart-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-xs opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div id="cart-panel" class="w-screen max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col pointer-events-auto">
+                <div class="p-6 bg-orange-50 border-b border-orange-100 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <h3 class="heading-font font-bold text-xl text-stone-800">您的購物車</h3>
+                    </div>
+                    <button id="close-cart-btn" class="w-8 h-8 rounded-full bg-white hover:bg-stone-100 flex items-center justify-center text-stone-500 transition-colors">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-stone-100">
+                    <!-- Dynamic cart items -->
+                </div>
+
+                <div class="p-6 bg-stone-50 border-t border-stone-200 space-y-4">
+                    <div class="flex justify-between items-center text-stone-600">
+                        <span>運費</span>
+                        <span class="font-medium text-emerald-600">免運費</span>
+                    </div>
+                    <div class="flex justify-between items-center text-lg font-bold text-stone-800">
+                        <span>總計金額</span>
+                        <span id="cart-total" class="text-orange-600 text-2xl">NT$ 0</span>
+                    </div>
+                    <button id="checkout-btn" class="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold py-4 rounded-2xl shadow-lg shadow-orange-500/25 transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-lock"><span>前往結帳</span></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 translate-y-20 opacity-0 transition-all duration-300 z-50 bg-stone-900 text-white px-6 py-3 rounded-full shadow-xl flex items-center gap-3 text-sm font-medium">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-message">已成功加入購物車！</span>
+    </div>
+
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-orange-500 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-paw"></i>
+                        </div>
+                        <span class="heading-font text-xl font-bold text-white">森林小夥伴</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-stone-400">
+                        提供最高品質、最溫柔陪伴的兒童動物絨毛娃娃。讓每一個孩子都在愛與擁抱中安心長大。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="heading-font text-white font-bold mb-4">快速導覽</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#products" class="hover:text-orange-400 transition-colors">精選全部娃娃</a></li>
+                        <li><a href="#features" class="hover:text-orange-400 transition-colors">安心品質說明</a></li>
+                        <li><a href="#cart-btn" class="hover:text-orange-400 transition-colors">查看購物車</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="heading-font text-white font-bold mb-4">客服與關懷</h4>
+                    <p class="text-sm mb-2"><i class="fa-solid fa-envelope mr-2 text-orange-400"></i> service@forest-friends.tw</p>
+                    <p class="text-sm"><i class="fa-solid fa-clock mr-2 text-orange-400"></i> 週一至週五 09:00 - 18:00</p>
+                </div>
+            </div>
+            <div class="border-t border-stone-800 pt-8 text-center text-xs text-stone-500">
+                &copy; 2026 森林小夥伴童話王國 版權所有. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data for all 10 plush toys with exact pricing and specifications
+        const products = [
+            {
+                id: 1,
+                name: "溫柔守護者・小熊 Barnaby",
+                tag: "小熊 Barnaby",
+                image: "images/01.png",
+                fallbackImage: "https://placehold.co/500x500/fed7aa/9a3412?text=Barnaby",
+                price: 580,
+                desc: "擁有柔和的棕色毛皮與可愛的米色小圍巾，觸感極為細緻柔軟。它是孩子睡前最安心的抱抱夥伴，陪伴寶貝進入香甜夢鄉。",
+                category: "安撫睡眠"
+            },
+            {
+                id: 2,
+                name: "森林探險家・小狐狸 Rusty",
+                tag: "小狐狸 Rusty",
+                image: "images/02.png",
+                fallbackImage: "https://placehold.co/500x500/ffedd5/c2410c?text=Rusty",
+                price: 520,
+                desc: "帶著靈動的眼神與蓬鬆的大尾巴，橘白相間的溫暖色調充滿活力。最適合喜歡戶外冒險與充滿好奇心的小朋友！",
+                category: "活潑冒險"
+            },
+            {
+                id: 3,
+                name: "優雅小公主・小兔子 Bella",
+                tag: "小兔子 Bella",
+                image: "images/03.png",
+                fallbackImage: "https://placehold.co/500x500/fce7f3/db2777?text=Bella",
+                price: 550,
+                desc: "長長的耳朵加上一身精緻的鄉村風碎花洋裝，散發著甜美溫柔的氣息。是陪伴小女孩辦家家酒與談心事的最佳閨蜜。",
+                category: "療癒自然"
+            },
+            {
+                id: 4,
+                name: "夜空守護星・貓頭鷹 Oliver",
+                tag: "貓頭鷹 Oliver",
+                image: "images/04.png",
+                fallbackImage: "https://placehold.co/500x500/e0e7ff/4338ca?text=Oliver",
+                price: 480,
+                desc: "圓滾滾的討喜身材與精緻的羽毛斑點，睜著一雙晶亮的大眼睛。彷彿隨時準備好聽孩子訴說祕密，是夜裡最溫暖的陪伴。",
+                category: "安撫睡眠"
+            },
+            {
+                id: 5,
+                name: "開心果・青蛙 Finnegan",
+                tag: "青蛙 Finnegan",
+                image: "images/05.png",
+                fallbackImage: "https://placehold.co/500x500/d1fae5/047857?text=Finnegan",
+                price: 450,
+                desc: "坐在綠色荷葉上、帶著憨厚笑容的 Finnegan，擁有極佳的坐姿與親膚絨毛。為孩子的每一天帶來充滿笑聲的歡樂時光。",
+                category: "活潑冒險"
+            },
+            {
+                id: 6,
+                name: "森林小幫手・小老鼠 Pip",
+                tag: "小老鼠 Pip",
+                image: "images/06.png",
+                fallbackImage: "https://placehold.co/500x500/f3f4f6/374151?text=Pip",
+                price: 420,
+                desc: "手裡緊緊抱著一顆小橡果，大大的耳朵超級萌！精緻小巧的造型讓孩子隨時隨地都想把它放進口袋一起出門。",
+                category: "活潑冒險"
+            },
+            {
+                id: 7,
+                name: "晨光小鹿・Willow",
+                tag: "小鹿 Willow",
+                image: "images/07.png",
+                fallbackImage: "https://placehold.co/500x500/fef3c7/b45309?text=Willow",
+                price: 590,
+                desc: "背上有著可愛的白色斑點，姿態溫柔優雅。散發著大自然森林的純淨氣息，帶給孩子平靜與療癒的力量。",
+                category: "療癒自然"
+            },
+            {
+                id: 8,
+                name: "草原小霸王・獅子 Leo",
+                tag: "獅子 Leo",
+                image: "images/08.png",
+                fallbackImage: "https://placehold.co/500x500/ffedd5/9a3412?text=Leo",
+                price: 620,
+                desc: "雖然是萬獸之王，但蓬鬆的鬃毛與無辜的大眼讓它一點也不兇，反而充滿安全感。給予孩子勇敢向前的勇氣！",
+                category: "活潑冒險"
+            },
+            {
+                id: 9,
+                name: "樹林小淘氣・小猴子 Maisie",
+                tag: "小猴子 Maisie",
+                image: "images/09.png",
+                fallbackImage: "https://placehold.co/500x500/fae8ff/86198f?text=Maisie",
+                price: 530,
+                desc: "手腳設計方便懸掛或擺出各種俏皮姿勢，活潑好動的模樣最能引起小朋友的共鳴，是家裡最熱鬧的開心果。",
+                category: "活潑冒險"
+            },
+            {
+                id: 10,
+                name: "害羞小不點・刺蝟 Hector",
+                tag: "刺蝟 Hector",
+                image: "images/10.png",
+                fallbackImage: "https://placehold.co/500x500/fef08a/854d0e?text=Hector",
+                price: 490,
+                desc: "雖然頂著一身特別的「刺」，但採用超柔軟的特殊絨毛材質，摸起來舒服又溫暖。圓滾滾的萌樣讓人忍不住想給它一個緊緊的擁抱！",
+                category: "療癒自然"
+            }
+        ];
+
+        let cart = [];
+        let currentFilter = 'all';
+
+        const productGrid = document.getElementById('product-grid');
+        const cartBtn = document.getElementById('cart-btn');
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartBackdrop = document.getElementById('cart-backdrop');
+        const cartPanel = document.getElementById('cart-panel');
+        const closeCartBtn = document.getElementById('close-cart-btn');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartTotal = document.getElementById('cart-total');
+        const cartCount = document.getElementById('cart-count');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        
+        const productModal = document.getElementById('product-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const modalContent = document.getElementById('modal-content');
+        
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toast-message');
+
+        // Render products based on filter category
+        function renderProducts(category = 'all') {
+            currentFilter = category;
+            const filtered = category === 'all' 
+                ? products 
+                : products.filter(p => p.category === category);
+
+            productGrid.innerHTML = filtered.map(product => `
+                <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
+                    <div class="relative overflow-hidden bg-orange-50/50 cursor-pointer" onclick="openModal(${product.id})">
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='${product.fallbackImage}'" class="w-full h-64 object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-orange-700 text-xs font-bold px-3 py-1 rounded-full shadow-xs">
+                            ${product.category}
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="heading-font font-bold text-lg text-stone-800 hover:text-orange-600 cursor-pointer transition-colors" onclick="openModal(${product.id})">
+                                ${product.name}
+                            </h3>
+                            <p class="text-stone-500 text-sm mt-2 line-clamp-2 leading-relaxed">
+                                ${product.desc}
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xl font-bold text-orange-600">NT$ ${product.price}</span>
+                            <button onclick="addToCart(${product.id})" class="bg-orange-50 hover:bg-orange-500 text-orange-600 hover:text-white px-4 py-2.5 rounded-2xl font-bold text-sm transition-all flex items-center gap-2 shadow-xs group/btn">
+                                <i class="fa-solid fa-cart-plus group-hover/btn:scale-110 transition-transform"></i> 加入
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update active state on buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if(btn.dataset.category === category) {
+                    btn.className = "filter-btn active-filter px-6 py-2.5 rounded-full font-bold text-sm bg-orange-500 text-white shadow-md transition-all";
+                } else {
+                    btn.className = "filter-btn px-6 py-2.5 rounded-full font-bold text-sm bg-white text-stone-600 border border-stone-200 hover:bg-orange-50 transition-all";
+                }
+            });
+        }
+
+        function filterProducts(category) {
+            renderProducts(category);
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            updateCartUI();
+            showToast(`已將「${product.tag}」加入購物車！`);
+            openCartDrawer();
+        }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            if (totalCount > 0) {
+                cartCount.textContent = totalCount;
+                cartCount.classList.remove('scale-0');
+                cartCount.classList.add('scale-100');
+            } else {
+                cartCount.classList.remove('scale-100');
+                cartCount.classList.add('scale-0');
+            }
+
+            cartTotal.textContent = `NT$ ${totalPrice}`;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="text-center py-16 text-stone-400 space-y-3">
+                        <i class="fa-solid fa-bag-shopping text-4xl text-stone-300"></i>
+                        <p class="text-base font-medium">購物車目前是空的唷！</p>
+                        <p class="text-xs text-stone-400">快去挑選一隻可愛的動物夥伴吧</p>
+                    </div>
+                `;
+            } else {
+                cartItemsContainer.innerHTML = cart.map(item => `
+                    <div class="py-4 flex items-center gap-4">
+                        <img src="${item.image}" onerror="this.src='${item.fallbackImage}'" alt="${item.name}" class="w-20 h-20 object-cover rounded-2xl bg-orange-50 border border-orange-100 flex-shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="heading-font font-bold text-stone-800 text-sm truncate">${item.name}</h4>
+                            <p class="text-orange-600 font-bold text-sm mt-1">NT$ ${item.price}</p>
+                            <div class="flex items-center gap-3 mt-2">
+                                <div class="flex items-center border border-stone-200 rounded-xl overflow-hidden bg-white">
+                                    <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})" class="px-2.5 py-1 text-stone-500 hover:bg-stone-100 transition-colors">
+                                        <i class="fa-solid fa-minus text-xs"></i>
+                                    </button>
+                                    <span class="px-3 text-sm font-bold text-stone-800">${item.quantity}</span>
+                                    <button onclick="updateQuantity(${item.id}, ${item.quantity + 1})" class="px-2.5 py-1 text-stone-500 hover:bg-stone-100 transition-colors">
+                                        <i class="fa-solid fa-plus text-xs"></i>
+                                    </button>
+                                </div>
+                                <button onclick="removeFromCart(${item.id})" class="text-stone-400 hover:text-rose-500 transition-colors p-1">
+                                    <i class="fa-solid fa-trash-can text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function updateQuantity(productId, newQty) {
+            if (newQty <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+            const item = cart.find(i => i.id === productId);
+            if (item) {
+                item.quantity = newQty;
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(i => i.id !== productId);
+            updateCartUI();
+        }
+
+        function openCartDrawer() {
+            cartDrawer.classList.remove('pointer-events-none');
+            cartBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+            cartBackdrop.classList.add('opacity-100');
+            cartPanel.classList.remove('translate-x-full');
+            cartPanel.classList.add('translate-x-0');
+        }
+
+        function closeCartDrawer() {
+            cartBackdrop.classList.remove('opacity-100');
+            cartBackdrop.classList.add('opacity-0', 'pointer-events-none');
+            cartPanel.classList.remove('translate-x-0');
+            cartPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                cartDrawer.classList.add('pointer-events-none');
+            }, 300);
+        }
+
+        cartBtn.addEventListener('click', openCartDrawer);
+        closeCartBtn.addEventListener('click', closeCartDrawer);
+        cartBackdrop.addEventListener('click', closeCartDrawer);
+
+        function showToast(message) {
+            toastMessage.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function openModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            modalContent.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="rounded-3xl overflow-hidden bg-orange-50/50 border border-orange-100">
+                        <img src="${product.image}" onerror="this.src='${product.fallbackImage}'" alt="${product.name}" class="w-full h-80 object-cover">
+                    </div>
+                    <div class="space-y-4">
+                        <span class="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full">
+                            ${product.category}
+                        </span>
+                        <h2 class="heading-font text-2xl sm:text-3xl font-bold text-stone-800">${product.name}</h2>
+                        <p class="text-2xl font-bold text-orange-600">NT$ ${product.price}</p>
+                        <p class="text-stone-600 text-sm leading-relaxed">${product.desc}</p>
+                        <div class="bg-amber-50/60 p-4 rounded-2xl border border-amber-100 text-xs text-amber-800 space-y-1">
+                            <p class="font-bold"><i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i> 材質保證：精選無毒親膚絨毛，可溫和水洗。</p>
+                            <p><i class="fa-solid fa-gift mr-1 text-orange-500"></i> 附贈精美森林風格禮物盒包裝。</p>
+                        </div>
+                        <div class="pt-4">
+                            <button onclick="addToCartFromModal(${product.id})" class="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold py-3.5 rounded-2xl shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> 加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            productModal.classList.remove('opacity-0', 'pointer-events-none');
+            productModal.querySelector('div > div').classList.remove('scale-95');
+            productModal.querySelector('div > div').classList.add('scale-100');
+        }
+
+        function closeModal() {
+            productModal.querySelector('div > div').classList.remove('scale-100');
+            productModal.querySelector('div > div').classList.add('scale-95');
+            productModal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        productModal.addEventListener('click', (e) => {
+            if (e.target === productModal) closeModal();
+        });
+
+        function addToCartFromModal(productId) {
+            addToCart(productId);
+            closeModal();
+        }
+
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                showToast('購物車是空的，無法結帳唷！');
+                return;
+            }
+            showToast('感謝您的訂購！將為您跳轉至結帳頁面 🎁');
+            setTimeout(() => {
+                cart = [];
+                updateCartUI();
+                closeCartDrawer();
+            }, 1500);
+        });
+
+        window.onload = function() {
+            renderProducts('all');
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* STREAMING_CHUNK:Defining font families and custom keyframe animations... */
+body {
+font-family: 'Noto Sans TC', 'Fredoka', sans-serif;
+background-color: #fdfbf7;
+color: #4a4543;
+}
+.heading-font {
+font-family: 'Fredoka', 'Noto Sans TC', sans-serif;
+}
+@keyframes float {
+0%, 100% { transform: translateY(0px) rotate(0deg); }
+50% { transform: translateY(-10px) rotate(2deg); }
+}
+.animate-float-slow {
+animation: float 4s ease-in-out infinite;
+}
+@keyframes bounce-gentle {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-5px); }
+}
+.animate-bounce-gentle:hover {
+animation: bounce-gentle 0.5s ease infinite;
+}
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+background: #cbd5e1;
+border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: #94a3b8;
+}
