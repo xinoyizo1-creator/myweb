@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星際探索商城 - Nebula Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #050515;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 星空背景特效 */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #00ffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ff77ff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.6;
+            z-index: -1;
+            animation: twinkle 50s linear infinite;
+        }
+
+        @keyframes twinkle {
+            from { transform: translateY(0); }
+            to { transform: translateY(-200px); }
+        }
+
+        /* 導覽列 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(10, 10, 30, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ffff, #ff77ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .cart-indicator {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        /* 主標題區 */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+
+        /* 商品列表容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* 商品卡片 */
+        .product-card {
+            background: rgba(20, 20, 45, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+            border-color: rgba(0, 255, 255, 0.4);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            color: #00ffff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* 加入購物車按鍵 */
+        .btn-add {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: #050515;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+        }
+
+        .btn-add:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.7);
+        }
+
+        /* 右下角黑洞元素 */
+        .black-hole-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .black-hole {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #000 40%, #111 60%, #9400d3 80%, #00ffff 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 30px #9400d3, 0 0 60px rgba(0, 255, 255, 0.5);
+            animation: rotate-hole 4s linear infinite, pulse-hole 2s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        @keyframes rotate-hole {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse-hole {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .black-hole-center {
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            border-radius: 50%;
+            box-shadow: inset 0 0 15px #ff77ff;
+        }
+
+        .bh-label {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            background: rgba(0,0,0,0.7);
+            padding: 4px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(148, 0, 211, 0.5);
+        }
+
+        /* 被吸入時的商品動畫樣式 */
+        .sucked-item {
+            position: fixed;
+            z-index: 2000;
+            pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        /* 購物車彈出面板 */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background: rgba(10, 10, 25, 0.95);
+            backdrop-filter: blur(15px);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+            z-index: 1500;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .cart-modal.open {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .cart-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkout-btn {
+            background: linear-gradient(135deg, #ff77ff 0%, #9400d3 100%);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(148, 0, 211, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 星空背景 -->
+    <div class="stars"></div>
+
+    <!-- 導覽列 -->
+    <header>
+        <div class="logo">🌌 NEBULA STORE</div>
+        <div class="cart-indicator" onclick="toggleCart()">
+            🛒 購物車: <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- 標題 -->
+    <section class="hero">
+        <h1>星際航行選品</h1>
+        <p>探索浩瀚宇宙，把心儀的星體與裝備吸入你的黑洞中！</p>
+    </section>
+
+    <!-- 商品展示區 -->
+    <div class="container" id="product-list">
+        <!-- 商品 1 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=500&q=80" alt="量子星雲能量瓶" class="product-img">
+            <h3 class="product-title">量子星雲能量瓶</h3>
+            <div class="product-price">NT$ 1,280</div>
+            <button class="btn-add" onclick="addToCart(event, '量子星雲能量瓶', 1280)">加入購物車</button>
+        </div>
+
+        <!-- 商品 2 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=80" alt="超光速星圖羅盤" class="product-img">
+            <h3 class="product-title">超光速星圖羅盤</h3>
+            <div class="product-price">NT$ 3,490</div>
+            <button class="btn-add" onclick="addToCart(event, '超光速星圖羅盤', 3490)">加入購物車</button>
+        </div>
+
+        <!-- 商品 3 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=500&q=80" alt="暗物質防護面罩" class="product-img">
+            <h3 class="product-title">暗物質防護面罩</h3>
+            <div class="product-price">NT$ 2,150</div>
+            <button class="btn-add" onclick="addToCart(event, '暗物質防護面罩', 2150)">加入購物車</button>
+        </div>
+    </div>
+
+    <!-- 右下角黑洞（點擊可打開購物車） -->
+    <div class="black-hole-container" onclick="toggleCart()">
+        <div class="black-hole" id="black-hole-target">
+            <div class="black-hole-center"></div>
+        </div>
+        <div class="bh-label">黑洞購物車</div>
+    </div>
+
+    <!-- 側邊購物車面板 -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>黑洞收納艙 (購物車)</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItemsList">
+            <p style="color: #888; text-align: center; margin-top: 40px;">黑洞裡空空如也...</p>
+        </div>
+        <div class="cart-footer">
+            <div style="display: flex; justify-content: space-between; font-weight: bold;">
+                <span>總計:</span>
+                <span id="cart-total" style="color: #00ffff;">NT$ 0</span>
+            </div>
+            <button class="checkout-btn" onclick="alert('啟動空間跳躍，結帳完成！')">進行空間結帳</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function addToCart(event, name, price) {
+            const button = event.target;
+            const card = button.closest('.product-card');
+            const img = card.querySelector('.product-img');
+
+            // 1. 建立飛向黑洞的縮圖動畫元素
+            const flyingImg = document.createElement('img');
+            flyingImg.src = img.src;
+            flyingImg.className = 'sucked-item';
+            
+            const imgRect = img.getBoundingClientRect();
+            flyingImg.style.top = `${imgRect.top}px`;
+            flyingImg.style.left = `${imgRect.left}px`;
+            flyingImg.style.width = `${imgRect.width}px`;
+            flyingImg.style.height = `${imgRect.height}px`;
+            
+            document.body.appendChild(flyingImg);
+
+            // 2. 取得右下角黑洞的中心座標
+            const holeTarget = document.getElementById('black-hole-target');
+            const holeRect = holeTarget.getBoundingClientRect();
+            const targetX = holeRect.left + holeRect.width / 2 - imgRect.width / 2;
+            const targetY = holeRect.top + holeRect.height / 2 - imgRect.height / 2;
+
+            // 3. 觸發動畫特效（旋轉、縮小並吸入黑洞中央）
+            setTimeout(() => {
+                flyingImg.style.transform = `translate(${targetX - imgRect.left}px, ${targetY - imgRect.top}px) scale(0.05) rotate(720deg)`;
+                flyingImg.style.opacity = '0';
+            }, 50);
+
+            // 動畫結束後移除暫存圖片
+            setTimeout(() => {
+                flyingImg.remove();
+            }, 850);
+
+            // 4. 更新購物車資料
+            cart.push({ name, price });
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-count').innerText = cart.length;
+            
+            const cartItemsList = document.getElementById('cartItemsList');
+            const cartTotal = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = `<p style="color: #888; text-align: center; margin-top: 40px;">黑洞裡空空如也...</p>`;
+                cartTotal.innerText = 'NT$ 0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="cart-item-row">
+                        <div>
+                            <div style="font-weight: bold;">${item.name}</div>
+                            <div style="color: #00ffff; font-size: 0.85rem;">NT$ ${item.price}</div>
+                        </div>
+                        <button onclick="removeFromCart(${index})" style="background: none; border: none; color: #ff5555; cursor: pointer;">移除</button>
+                    </div>
+                `;
+            });
+
+            cartItemsList.innerHTML = html;
+            cartTotal.innerText = `NT$ ${total}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cartModal');
+            modal.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
